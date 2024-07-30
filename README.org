@@ -28,6 +28,12 @@ environments. See [[https://direnv.net/]] for more details.
 
 ** layer
 
+Add this layer to your =~/.emacs.d/private/= directory. For example, using git:
+
+#+BEGIN_SRC shell
+  git clone https://github.com/mprentice/spacemacs-envrc.git ~/.emacs.d/private/envrc
+#+END_SRC
+
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =envrc= to the existing =dotspacemacs-configuration-layers= list in this
 file.
