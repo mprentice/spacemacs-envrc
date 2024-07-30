@@ -1,0 +1,63 @@
+#+TITLE: envrc layer
+#+AUTHOR: Data Mike
+#+EMAIL: mjp35@cornell.edu
+#+TAGS: layer|tool
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+- [[#description][Description]]
+  - [[#features][Features:]]
+- [[#install][Install]]
+  - [[#layer][layer]]
+  - [[#direnv][direnv]]
+- [[#key-bindings][Key bindings]]
+
+* Description
+
+This layer adds support for [[https://direnv.net/][direnv]] using purcell's [[https://github.com/purcell/envrc][envrc]] package.
+
+Direnv uses a =.envrc= file to create per-project isolated development
+environments. See [[https://direnv.net/]] for more details.
+
+** Features:
+  - [[https://direnv.net/][direnv]] support
+  - envrc-mode: Buffer local minor mode.
+  - envrc-global-mode: Global minor mode.
+
+* Install
+
+** layer
+
+To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+add =envrc= to the existing =dotspacemacs-configuration-layers= list in this
+file.
+
+To enable envrc global minor mode for all buffers on startup, set the
+=envrc-global-mode-enable-on-startup= variable to non-nil in the =envrc= layer
+variables or in =dotspacemacs/user-config=. For example:
+
+#+BEGIN_SRC emacs-lisp
+  (setq-default dotspacemacs-configuration-layers
+                '((envrc :variables
+                          envrc-global-mode-enable-on-startup t)
+                  ; ... other layers
+                  )
+#+END_SRC
+
+** direnv
+
+Direnv must also be installed. See direnv's [[https://direnv.net/docs/installation.html][installation]] documentation for
+instructions on how to install direnv.
+
+* Key bindings
+
+| Key Binding | Description                             |
+|-------------+-----------------------------------------|
+| ~SPC t e~   | Toggle envrc minor mode for this buffer |
+| ~SPC t C-e~ | Toggle envrc minor mode for all buffers |
+
+# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
+# Examples:
+# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
+# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
+# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
